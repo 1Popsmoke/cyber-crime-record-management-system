@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+ 
+    <title>All Complaints</title>
+</head>
+<body>
+    <style>
+    
+        body {
+            background-image: url("{% static 'bad crime.jpg' %}");
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+            color: white;
+
+            
+
+            
+        }
+       
+       
+        </style>
+    <h1>All Complaints</h1>
+    
+    {% if complaints %}
+        <ul>
+            {% for complaint in complaints %}
+                <li>
+                    <strong>{{ complaint.title }}</strong>
+                    - <a href="{% url 'view_complaint' complaint.pk %}">View Complaint</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No complaints available.</p>
+    {% endif %}
+
+    <a href="{% url 'mainpage' %}">Back to Homepage</a>
+</body>
+</html>

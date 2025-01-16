@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint Details</title>
+</head>
+<body>
+    <h1>{{ complaint.title }}</h1>
+    <p>{{ complaint.description }}</p>
+    <p><strong>Created at:</strong> {{ complaint.created_at }}</p>
+    <a href="{% url 'update_complaint' complaint.pk %}">Edit Complaint</a>
+</body>
+</html>
